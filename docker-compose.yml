@@ -7,7 +7,7 @@ services:
     expose:
       - "3000"
     volumes:
-      - bifrost-data:/app/data/db
+      - bifrost-data-v2:/app/data/db
     environment:
       - APP_HOST=0.0.0.0
       - APP_PORT=3000
@@ -15,6 +15,7 @@ services:
       - LOG_STYLE=json
       - BIFROST_ENCRYPTION_KEY=${BIFROST_ENCRYPTION_KEY}
       - UPSTREAM_API_KEY=${UPSTREAM_API_KEY}
+      - NICEDAY_API_KEY=${NICEDAY_API_KEY}
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/health"]
       interval: 30s
@@ -23,4 +24,4 @@ services:
       start_period: 10s
 
 volumes:
-  bifrost-data:
+  bifrost-data-v2:
