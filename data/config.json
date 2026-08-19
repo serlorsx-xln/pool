@@ -59,6 +59,36 @@
       }
     }
   },
+  "auth_config": {
+    "admin_username": "serlorsx",
+    "admin_password": "env.BIFROST_ADMIN_PASSWORD",
+    "is_enabled": true,
+    "disable_auth_on_inference": true
+  },
+  "governance": {
+    "virtual_keys": [
+      {
+        "id": "vk-serlorsx",
+        "value": "sk-bf-5dc3870e-27d1-42e3-bedb-ce4b4fad54cd",
+        "name": "serlorsx",
+        "is_active": true,
+        "provider_configs": [
+          {
+            "provider": "upstream-pool",
+            "key_ids": ["*"],
+            "allowed_models": ["*"],
+            "weight": 1.0
+          },
+          {
+            "provider": "upstream-anthropic",
+            "key_ids": ["*"],
+            "allowed_models": ["*"],
+            "weight": 1.0
+          }
+        ]
+      }
+    ]
+  },
   "config_store": {
     "enabled": true,
     "type": "sqlite",
