@@ -5,3 +5,5 @@ data/*.db
 data/*.sqlite
 ._*
 .DS_Store
+*.db-shm
+*.db-wal
