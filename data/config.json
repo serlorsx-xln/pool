@@ -1,0 +1,46 @@
+{
+  "$schema": "https://www.getbifrost.ai/schema",
+  "encryption_key": "env.BIFROST_ENCRYPTION_KEY",
+  "client": {
+    "initial_pool_size": 200,
+    "drop_excess_requests": false,
+    "enable_logging": true,
+    "log_retention_days": 30
+  },
+  "providers": {
+    "upstream-pool": {
+      "keys": [
+        {
+          "name": "anutinaiplus-key",
+          "value": "env.UPSTREAM_API_KEY",
+          "models": ["*"],
+          "weight": 1.0
+        }
+      ],
+      "network_config": {
+        "base_url": "https://anutinaiplus.catkiller.lol/v1",
+        "default_request_timeout_in_seconds": 300,
+        "max_retries": 2
+      },
+      "custom_provider_config": {
+        "base_provider_type": "openai",
+        "allowed_requests": {
+          "list_models": true,
+          "chat_completion": true,
+          "chat_completion_stream": true,
+          "text_completion": true,
+          "text_completion_stream": true,
+          "embedding": true
+        }
+      }
+    }
+  },
+  "config_store": {
+    "enabled": true,
+    "type": "sqlite"
+  },
+  "logs_store": {
+    "enabled": true,
+    "type": "sqlite"
+  }
+}
