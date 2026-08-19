@@ -63,14 +63,14 @@
     "enabled": true,
     "type": "sqlite",
     "config": {
-      "path": "config.db"
+      "path": "/app/data/db/config.db"
     }
   },
   "logs_store": {
     "enabled": true,
     "type": "sqlite",
     "config": {
-      "path": "logs.db"
+      "path": "/app/data/db/logs.db"
     }
   }
 }
