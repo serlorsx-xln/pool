@@ -33,6 +33,28 @@
           "embedding": true
         }
       }
+    },
+    "upstream-anthropic": {
+      "keys": [
+        {
+          "name": "anutinaiplus-anthropic-key",
+          "value": "env.UPSTREAM_API_KEY",
+          "models": ["*"],
+          "weight": 1.0
+        }
+      ],
+      "network_config": {
+        "base_url": "https://anutinaiplus.catkiller.lol/anthropic",
+        "default_request_timeout_in_seconds": 300,
+        "max_retries": 2
+      },
+      "custom_provider_config": {
+        "base_provider_type": "anthropic",
+        "allowed_requests": {
+          "chat_completion": true,
+          "chat_completion_stream": true
+        }
+      }
     }
   },
   "config_store": {
