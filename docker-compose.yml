@@ -2,8 +2,8 @@ services:
   bifrost:
     image: maximhq/bifrost:latest
     restart: unless-stopped
-    ports:
-      - "8080:8080"
+    expose:
+      - "8080"
     volumes:
       - bifrost-data:/app/data
       - ./data/config.json:/app/data/config.json
