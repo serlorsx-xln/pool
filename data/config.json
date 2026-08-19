@@ -15,12 +15,6 @@
           "value": "env.UPSTREAM_API_KEY",
           "models": ["*"],
           "weight": 1.0
-        },
-        {
-          "name": "niceday-key",
-          "value": "env.NICEDAY_API_KEY",
-          "models": ["*"],
-          "weight": 1.0
         }
       ],
       "network_config": {
@@ -45,12 +39,6 @@
         {
           "name": "serlorsx-anthropic-key",
           "value": "env.UPSTREAM_API_KEY",
-          "models": ["*"],
-          "weight": 1.0
-        },
-        {
-          "name": "niceday-anthropic-key",
-          "value": "env.NICEDAY_API_KEY",
           "models": ["*"],
           "weight": 1.0
         }
