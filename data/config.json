@@ -86,6 +86,26 @@
             "weight": 1.0
           }
         ]
+      },
+      {
+        "id": "vk-niceday",
+        "value": "sk-bf-f5254110-dbba-40f0-8790-c15c4a6d3317",
+        "name": "niceday",
+        "is_active": true,
+        "provider_configs": [
+          {
+            "provider": "upstream-pool",
+            "key_ids": ["*"],
+            "allowed_models": ["*"],
+            "weight": 1.0
+          },
+          {
+            "provider": "upstream-anthropic",
+            "key_ids": ["*"],
+            "allowed_models": ["*"],
+            "weight": 1.0
+          }
+        ]
       }
     ]
   },
