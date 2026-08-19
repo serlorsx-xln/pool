@@ -34,11 +34,61 @@
         }
       }
     },
+    "niceday-pool": {
+      "keys": [
+        {
+          "name": "niceday-key",
+          "value": "env.NICEDAY_API_KEY",
+          "models": ["*"],
+          "weight": 1.0
+        }
+      ],
+      "network_config": {
+        "base_url": "https://anutinaiplus.catkiller.lol",
+        "default_request_timeout_in_seconds": 300,
+        "max_retries": 2
+      },
+      "custom_provider_config": {
+        "base_provider_type": "openai",
+        "allowed_requests": {
+          "list_models": true,
+          "chat_completion": true,
+          "chat_completion_stream": true,
+          "text_completion": true,
+          "text_completion_stream": true,
+          "embedding": true
+        }
+      }
+    },
     "upstream-anthropic": {
       "keys": [
         {
           "name": "serlorsx-anthropic-key",
           "value": "env.UPSTREAM_API_KEY",
+          "models": ["*"],
+          "weight": 1.0
+        }
+      ],
+      "network_config": {
+        "base_url": "https://anutinaiplus.catkiller.lol/anthropic",
+        "default_request_timeout_in_seconds": 300,
+        "max_retries": 2
+      },
+      "custom_provider_config": {
+        "base_provider_type": "anthropic",
+        "allowed_requests": {
+          "chat_completion": true,
+          "chat_completion_stream": true,
+          "responses": true,
+          "responses_stream": true
+        }
+      }
+    },
+    "niceday-anthropic": {
+      "keys": [
+        {
+          "name": "niceday-anthropic-key",
+          "value": "env.NICEDAY_API_KEY",
           "models": ["*"],
           "weight": 1.0
         }
