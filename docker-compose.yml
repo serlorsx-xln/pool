@@ -53,6 +53,8 @@ services:
     environment:
       - SQLITE_PATH=/sqlite/logs.db
       - PG_DSN=host=postgres port=5432 user=bifrost password=0690a8f3368cc0cd29060de48979f05d dbname=bifrost_logs
+      - VK=sk-bf-4694ab2c-a7d8-4c7f-871f-01090a0645f3
+      - GATEWAY=http://bifrost:3000
     depends_on:
       postgres:
         condition: service_healthy
