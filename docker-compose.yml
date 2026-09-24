@@ -26,6 +26,16 @@ services:
       retries: 3
       start_period: 10s
 
+  db-maintenance:
+    image: alpine:3.20
+    restart: "no"
+    volumes:
+      - bifrost-data-v2:/db
+    command: >
+      sh -c "apk add --no-cache sqlite >/dev/null &&
+             sqlite3 /db/logs.db 'ANALYZE;' &&
+             echo 'ANALYZE done'"
+
   redis:
     image: redis:7-alpine
     restart: unless-stopped
