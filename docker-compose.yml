@@ -43,6 +43,20 @@ services:
       timeout: 5s
       retries: 3
 
+  db-migrate:
+    build:
+      context: ./migrate
+      dockerfile: Dockerfile
+    restart: "no"
+    volumes:
+      - bifrost-data-v2:/sqlite:ro
+    environment:
+      - SQLITE_PATH=/sqlite/logs.db
+      - PG_DSN=host=postgres port=5432 user=bifrost password=0690a8f3368cc0cd29060de48979f05d dbname=bifrost_logs
+    depends_on:
+      postgres:
+        condition: service_healthy
+
   redis:
     image: redis:7-alpine
     restart: unless-stopped
