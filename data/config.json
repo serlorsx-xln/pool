@@ -146,8 +146,8 @@
       "port": 5432,
       "user": "bifrost",
       "password": "0690a8f3368cc0cd29060de48979f05d",
-      "database": "bifrost_logs",
-      "sslmode": "disable"
+      "db_name": "bifrost_logs",
+      "ssl_mode": "disable"
     }
   }
 }
