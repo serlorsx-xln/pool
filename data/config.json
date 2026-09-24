@@ -5,7 +5,8 @@
     "initial_pool_size": 200,
     "drop_excess_requests": false,
     "enable_logging": true,
-    "log_retention_days": 30
+    "log_retention_days": 30,
+    "disable_content_logging": true
   },
   "providers": {
     "upstream-pool": {
